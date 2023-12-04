@@ -7,6 +7,7 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -23,6 +24,7 @@ func main() {
 		line := scanner.Text()
 		lines = append(lines, line) // Append each line to the array
 	}
+	start_time := time.Now()
 	calibration_sum := 0
 	for _, line := range lines {
 		line = strings.ReplaceAll(line, "twone", "21")
@@ -49,8 +51,9 @@ func main() {
 		calibration_value := first_digit*10 + last_digit
 		calibration_sum += calibration_value
 
-		fmt.Println("line: ", line, "\nfirst_digit: ", first_digit, "last_digit: ", last_digit, "calibration_value: ", calibration_value, "calibration_sum: ", calibration_sum)
-		fmt.Println("matches: ", matches)
+		// fmt.Println("line: ", line, "\nfirst_digit: ", first_digit, "last_digit: ", last_digit, "calibration_value: ", calibration_value, "calibration_sum: ", calibration_sum)
+		// fmt.Println("matches: ", matches)
 	}
+	fmt.Println(time.Now().Sub(start_time))
 	fmt.Println(calibration_sum)
 }
