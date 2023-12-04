@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func main() {
+func dec1() {
 	f, err := os.Open("dec-1-puzzle.txt")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
