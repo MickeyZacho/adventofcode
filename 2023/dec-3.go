@@ -25,8 +25,10 @@ func main() {
 	sum := 0
 	re := regexp.MustCompile(`[0-9]+`)
 	for _, line := range lines {
-		match_indexes := re.FindAllStringIndex(line, -1)
+		// match_indexes := re.FindAllStringIndex(line, -1)
 		matches := re.FindAllString(line, -1)
 		fmt.Println(matches)
 	}
+	fmt.Println(sum)
+
 }
