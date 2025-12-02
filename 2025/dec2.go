@@ -71,9 +71,9 @@ func isInvalidInputDec2_2(i int) bool {
 		}
 	}
 
-	// cand is the number of digits we are checking if is repeated
+	// seqLen is the number of digits we are checking if is repeated
 	for _, seqLen := range sequenceLengths {
-		numRepeats := digits / seqLen // digits is divisble by cand
+		numRepeats := digits / seqLen // digits is divisble by seqLen
 		sequence := numStr[0:seqLen]
 		isSequenceValid := true
 		for i := 1; i < numRepeats; i++ {
