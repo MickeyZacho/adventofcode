@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"os"
 	"strconv"
@@ -55,21 +54,4 @@ func dec1() {
 	fmt.Println("Result: " + strconv.Itoa(current_val))
 	fmt.Println("task 1: " + strconv.Itoa(zeroes))
 	fmt.Println("task 2: " + strconv.Itoa(zero_cross))
-}
-
-func get_input(number string) []string {
-	f, err := os.Open("dec" + number + ".txt")
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		fmt.Println(err)
-	}
-	defer f.Close()
-
-	scanner := bufio.NewScanner(f)
-	var lines []string // Array to store the lines
-	for scanner.Scan() {
-		line := scanner.Text()
-		lines = append(lines, line) // Append each line to the array
-	}
-	return lines
 }
