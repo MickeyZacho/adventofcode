@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func dec1() {
 	input_lines := get_input("1-1")
 	current_val := 50
 	zeroes := 0
