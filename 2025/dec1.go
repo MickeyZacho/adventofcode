@@ -7,11 +7,11 @@ import (
 )
 
 func dec1() {
-	input_lines := readInputFromFile("1-1")
-	current_val := 50
+	inputLines := readInputFromFile("1-1")
+	currentVal := 50
 	zeroes := 0
-	zero_cross := 0
-	for _, code := range input_lines {
+	zeroCross := 0
+	for _, code := range inputLines {
 		direction := code[0:1]
 		steps, err := strconv.Atoi(code[1:])
 		if err != nil {
@@ -19,39 +19,39 @@ func dec1() {
 			os.Exit(1)
 		}
 
-		initial_val := current_val
+		initialVal := currentVal
 
-		shortened_steps := steps % 100
-		step_rotations := steps / 100
-		zero_cross += step_rotations
+		shortenedSteps := steps % 100
+		stepRotations := steps / 100
+		zeroCross += stepRotations
 
 		switch direction {
 		case "R":
-			current_val = (current_val + shortened_steps)
-			if current_val > 99 {
-				zero_cross++
-				current_val -= 100
+			currentVal = (currentVal + shortenedSteps)
+			if currentVal > 99 {
+				zeroCross++
+				currentVal -= 100
 			}
 		case "L":
-			current_val = (current_val - shortened_steps)
-			if current_val == 0 && initial_val != 0 {
-				zero_cross++
+			currentVal = (currentVal - shortenedSteps)
+			if currentVal == 0 && initialVal != 0 {
+				zeroCross++
 			}
-			if current_val < 0 && initial_val != 0 {
-				zero_cross++
+			if currentVal < 0 && initialVal != 0 {
+				zeroCross++
 			}
-			if current_val < 0 {
-				current_val += 100
+			if currentVal < 0 {
+				currentVal += 100
 			}
 		default:
 			os.Exit(2)
 		}
 
-		if current_val == 0 {
+		if currentVal == 0 {
 			zeroes++
 		}
 	}
-	fmt.Println("Result: " + strconv.Itoa(current_val))
+	fmt.Println("Result: " + strconv.Itoa(currentVal))
 	fmt.Println("task 1: " + strconv.Itoa(zeroes))
-	fmt.Println("task 2: " + strconv.Itoa(zero_cross))
+	fmt.Println("task 2: " + strconv.Itoa(zeroCross))
 }
