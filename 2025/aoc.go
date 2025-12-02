@@ -10,7 +10,7 @@ func main() {
 	dec1()
 	dec2()
 }
-func get_input(number string) []string {
+func readInputFromFile(number string) []string {
 	f, err := os.Open("dec" + number + ".txt")
 	if err != nil {
 		fmt.Println("Error opening file:", err)

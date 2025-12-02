@@ -9,7 +9,7 @@ import (
 
 func dec2() {
 	// Input consists of a single line of ranges like "5-10,15-20"
-	inputLines := get_input("2")
+	inputLines := readInputFromFile("2")
 	rangesString := inputLines[0]
 	ranges := strings.Split(rangesString, ",")
 	invalidIdSum1 := 0

@@ -7,7 +7,7 @@ import (
 )
 
 func dec1() {
-	input_lines := get_input("1-1")
+	input_lines := readInputFromFile("1-1")
 	current_val := 50
 	zeroes := 0
 	zero_cross := 0
