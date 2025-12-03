@@ -9,6 +9,7 @@ import (
 func main() {
 	dec1()
 	dec2()
+	dec3_2()
 }
 func readInputFromFile(number string) []string {
 	f, err := os.Open("dec" + number + ".txt")
